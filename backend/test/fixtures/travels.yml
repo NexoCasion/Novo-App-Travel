@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nome: MyString
+  desc: MyText
+  data: 2023-04-01 09:14:22
+  price: 1.5
+
+two:
+  nome: MyString
+  desc: MyText
+  data: 2023-04-01 09:14:22
+  price: 1.5
