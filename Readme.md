@@ -30,3 +30,17 @@
 ## Subir o rails no servidor 3001
 
 ```rails s -p 3001```
+# Frontend
+## Passo a Passo para instalar o front
+
+### Entrar na pasta em outro cmd
+
+```cd frontend```
+
+### Instalar as dependencias
+
+```npm install```
+
+### Iniciar o React
+
+```npm start```
