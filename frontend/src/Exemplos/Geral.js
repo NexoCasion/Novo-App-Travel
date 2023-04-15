@@ -8,8 +8,8 @@ return (<>
 
     <FunctionSimples/>
     <FunctionDupla/>    
-    <Botao>Entrar</Botao>
-    <Botao>Sair</Botao>
+    <Botao classe="botao green">entrar</Botao>
+    <Botao classe="botao red ">sair</Botao>
     </>
     )
 }
