@@ -33,6 +33,13 @@ function EnvioFormulario(event){
       placeholder='Nome da viagem'
       onChange={(e)=>setTravel({...travel,nome: e.target.value})}
       />
+      <textarea
+      required
+      id="desc"
+      onChange={(e)=>setTravel({....travel,desc: e.target.value})}
+      value={travel.desc}
+      placeholder='Descrição da Viagem'
+      />
       <button> Cadastrar Viagem </button>
       </form>
       {
