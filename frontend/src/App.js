@@ -12,8 +12,17 @@ function App() {
   },[])
 function EnvioFormulario(event){
   event.preventDefault();
-  
+  axios.post('http://localhost:3001/api/v1/travels',{travel})
+    .then(res=>{
+      console.log(res.data)
+      setTravels([...travels,res.data])
+      setTravel({
+        nome: ''
+      })
+    })
+    .catch(error=>console.log(error))
 }
+
   return (
     <div className="App">
       <form onSubmit={EnvioFormulario}>

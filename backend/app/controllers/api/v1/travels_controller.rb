@@ -11,7 +11,7 @@ class Api::V1::TravelsController < ApplicationController
   def create
     @travel = Travel.new(travel_params)
     if @travel.save
-      render json: @travel.save
+      render json: @travel
     else 
       render json:{errors: @travel.errors,message: "deu ruim pra cadastrar"},status: :unprocessable_entity
     end
