@@ -1,6 +1,8 @@
 import './App.css';
 import axios from "axios";
 import { useState, useEffect } from 'react';
+import Form from './components/Form';
+import Card from './components/Card';
 
 function App() {
   const [travels, setTravels] = useState([]);
@@ -25,26 +27,24 @@ function EnvioFormulario(event){
 
   return (
     <div className="App">
-      <form onSubmit={EnvioFormulario}>
-      <input
-      id="Nome"
-      required
-      value={travel.nome}
-      placeholder='Nome da viagem'
-      onChange={(e)=>setTravel({...travel,nome: e.target.value})}
+      <Form
+        travel={travel}
+        setTravel={setTravel}
+        EnvioFormulario={EnvioFormulario}
       />
-      <textarea
-      required
-      id="desc"
-      onChange={(e)=>setTravel({....travel,desc: e.target.value})}
-      value={travel.desc}
-      placeholder='Descrição da Viagem'
-      />
-      <button> Cadastrar Viagem </button>
-      </form>
+      <div className='cards'>
       {
-        travels.map(viagem=><h1 key={viagem.id}>{viagem.nome}</h1>)
-      }
+        travels.map(viagem=>
+          <Card
+          key={viagem.id}
+          id={viagem.id}
+          nome={viagem.nome}
+          data={viagem.data}
+          desc={viagem.desc}
+          price={viagem.price}
+          />
+          )
+      }</div>
     </div>
   );
 }
