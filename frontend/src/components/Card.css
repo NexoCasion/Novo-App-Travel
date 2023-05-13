@@ -13,3 +13,15 @@
   justify-content: space-between;
   position: relative;
 }
+
+.disappear{
+  animation: disappear 0.7s ease-out forwards;
+}
+@keyframes disappear{
+  0%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+  }
+}

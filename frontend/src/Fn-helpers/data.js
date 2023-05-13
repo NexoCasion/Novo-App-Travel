@@ -3,8 +3,8 @@ export function Formatardata(data){
     return brasilDateTime
 
 }
-function formatDateTime(){
-    const dataObj = new Date();
+function formatDateTime(data){
+    const dataObj = new Date(data);
     const day = dataObj.getUTCDate().toString().padStart(2,"0");
     const month = (dataObj.getUTCDate()+1).toString().padStart(2,"0");
     const year = dataObj.getUTCFullYear().toString();
