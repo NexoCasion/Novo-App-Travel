@@ -1,5 +1,5 @@
 import './Card.css';
-
+import {GrTrash} from 'react-icons/gr'
 function Card(props) {
   const {id,data,desc,price} = props
   return (
@@ -13,8 +13,8 @@ function Card(props) {
         </div>
         <div className="bottom">
           <div className="botoes">
-            <div>
-              deletar
+            <div onClick={()=>props.deleteTravel(id)}>
+            <GrTrash size={32}/>
             </div>
             <div className="icons">
 

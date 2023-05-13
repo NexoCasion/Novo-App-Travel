@@ -48,6 +48,7 @@ function EnvioFormulario(event){
       {
         travels.map(viagem=>
           <Card
+          deleteTravel={deleteTravel}
           key={viagem.id}
           id={viagem.id}
           nome={viagem.nome}
