@@ -31,7 +31,7 @@ axios.put(`http://localhost:3001/api/v1/travels/${id}`,{travel})
     } 
     return v
   })
-  setTravel (newListadeViagens)
+  setTravels(newListadeViagens)
 })
 .catch(erro=>{
   console.log(erro)
@@ -55,6 +55,17 @@ function CadastrarViagem(travel){
 
 function EnvioFormulario(event){
   event.preventDefault();
+  if (editId !== -1){
+    editTravel(editId,travel)
+    setEditID(-1)
+    setTravel({
+      nome: '',
+      data: '',
+      price: '',
+      desc: '',
+    })
+    return
+  }
   CadastrarViagem(travel);
 }
 
