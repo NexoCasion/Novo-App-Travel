@@ -33,6 +33,10 @@
   font-size:  1.2rem;
   text-align: center;
 }
+
+#trashDelete:hover{
+  color: red;
+}
 .btns{
   display: flex;
   flex-direction: row;
@@ -47,9 +51,7 @@
   justify-content: center;
   align-items: center;
 }
-#trashDelete:hover{
-  color: red;
-}
+
 #editIcon:hover{
   color: yellow;
 }
