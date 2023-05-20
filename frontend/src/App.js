@@ -38,21 +38,24 @@ axios.put(`http://localhost:3001/api/v1/travels/${id}`,{travel})
 })
 }
 
+function CadastrarViagem(travel){
+  axios.post('http://localhost:3001/api/v1/travels',{travel})
+  .then(res=>{
+    console.log(res.data)
+    setTravels([...travels,res.data])
+    setTravel({
+      nome: '',
+      data: '',
+      price: '',
+      desc: '',
+    })
+  })
+  .catch(error=>console.log(error))
+}
 
 function EnvioFormulario(event){
   event.preventDefault();
-  axios.post('http://localhost:3001/api/v1/travels',{travel})
-    .then(res=>{
-      console.log(res.data)
-      setTravels([...travels,res.data])
-      setTravel({
-        nome: '',
-        data: '',
-        price: '',
-        desc: '',
-      })
-    })
-    .catch(error=>console.log(error))
+  CadastrarViagem(travel);
 }
 
   return (
