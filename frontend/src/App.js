@@ -21,7 +21,21 @@ const deleteTravel = (id)=>{
   })
   .catch(erro=>console.log("eroo ao deltar"))
 }
-
+const editTravel=(id,travel)=>{
+axios.put(`http://localhost:3001/api/v1/travels/${id}`,{travel})
+.then(res=>{
+  let newListadeViagens = travels.map(v=>{
+    if (v.id === id){
+      return res.data
+    } 
+    return v
+  })
+  setTravel (newListadeViagens)
+})
+.catch(erro=>{
+  console.log(erro)
+})
+}
 
 
 function EnvioFormulario(event){
