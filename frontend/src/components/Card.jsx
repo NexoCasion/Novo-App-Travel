@@ -1,6 +1,7 @@
 import { Formatardata } from '../Fn-helpers/data.js';
 import './Card.css';
 import {GrTrash} from 'react-icons/gr'
+import {BiEditAlt} from "react-icons/bi"
 import { useState } from 'react';
 function Card(props) {
   const {id,data,desc,price} = props
@@ -10,6 +11,15 @@ function Card(props) {
     setTimeout(()=>{
       props.deleteTravel(id)
     },700)
+  }
+  const setEditing = ()=>{
+    props.setTravel({
+      nome: props.nome,
+      data: data.slice(0,16),
+      desc: desc,
+      price: price
+    })
+    props.setEditID(id)
   }
   return (
     <>
@@ -29,8 +39,12 @@ function Card(props) {
             >
               <GrTrash size={32}/>
             </div>
-            <div className="icons">
-
+            <div
+            id='editIcon' 
+            className="icons"
+            onClick={()=>setEditing()}
+            >
+              <BiEditAlt size={32}/>
             </div>
           </div>
         </div>

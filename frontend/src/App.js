@@ -7,6 +7,7 @@ import Card from './components/Card';
 function App() {
   const [travels, setTravels] = useState([]);
   const [travel, setTravel] = useState({nome:''});
+  const [editId,setEditID]= useState(-1);
   useEffect (() =>{
     axios.get("http://localhost:3001/api/v1/travels")
       .then(resposta=> setTravels(resposta.data))
@@ -45,7 +46,10 @@ function EnvioFormulario(event){
       console.log(res.data)
       setTravels([...travels,res.data])
       setTravel({
-        nome: ''
+        nome: '',
+        data: '',
+        price: '',
+        desc: '',
       })
     })
     .catch(error=>console.log(error))
@@ -57,6 +61,7 @@ function EnvioFormulario(event){
         travel={travel}
         setTravel={setTravel}
         EnvioFormulario={EnvioFormulario}
+        id={editId}
       />
       <div className='cards'>
       {
@@ -69,6 +74,8 @@ function EnvioFormulario(event){
           data={viagem.data}
           desc={viagem.desc}
           price={viagem.price}
+          setEditID={setEditID}
+          setTravel={setTravel}
           />
           )
       }</div>
