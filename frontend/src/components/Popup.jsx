@@ -1,8 +1,8 @@
 import "./Popup.css"
 
-function Popup(){
-    <div className="popup">
-        batata
+function Popup(message,color){
+    <div className={'popup ${color}'}>
+        {message}
     </div>
 }
 export default Popup
