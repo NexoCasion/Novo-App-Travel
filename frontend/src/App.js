@@ -103,7 +103,12 @@ function EnvioFormulario(event){
           setTravel={setTravel}
           />
           )
-      }<Popup/>
+      }
+      {showPopup?
+        <Popup/>
+        :null
+
+      }
       </div>
     </div>
   );
