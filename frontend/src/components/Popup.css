@@ -1,0 +1,36 @@
+.popup{
+    background-color: aqua;
+    width: 280px;
+    height: 120px;
+    border-radius: 14px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.6rem;
+    color: white;
+    font-weight: 800;
+    position: fixed;
+    bottom: 50 px;
+    right: 50px;
+    animation: showPopup 2s ease-in-out;
+}
+@keyframes showPopup{
+0%{
+right: -360px;
+}
+80%{
+    right: 100px;
+}
+100%{
+    right: 50px;
+}
+}
+.warning{
+    background-color:red;
+
+}
+.sucess{
+background-color: green;
+}
+

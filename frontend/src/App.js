@@ -100,7 +100,7 @@ function EnvioFormulario(event){
           setTravel={setTravel}
           />
           )
-      }<Popup></Popup>
+      }<Popup/>
       </div>
     </div>
   );
